@@ -8,7 +8,7 @@ index_title='{"index":{"_index":"flume-park-lot","_type":"flumetype"}}'
 i=0
 while [ $i -ne 1000 ]
 do
-  rand_date=`date +"%Y-%m-%d %H:%M:%S" -d "-$RANDOM minutes"`
+  rand_date=`date +"%Y-%m-%d %H:%M:%S" -d "-$RANDOM seconds"`
   rand_parkuesed=$(($RANDOM%$parklot))
   index_data="""{\"inc_parklot\":$parklot,\"inc_parkuesed\":$rand_parkuesed,\"snc_statistic_type\":\"SUMMATION\",\"tfp_sort_time\":\"$rand_date\"}"""
   echo $index_title >> data.json
